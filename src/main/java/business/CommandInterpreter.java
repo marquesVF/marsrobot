@@ -4,7 +4,7 @@ package business;
  * Created by vinicius on 22/03/17.
  */
 public class CommandInterpreter {
-    public static boolean validadeCommand(String command, Terrain terrain){
+    public static boolean validateCommand(String command, Terrain terrain){
         boolean valid = true;
         for(final char c : command.toCharArray()){
             switch (c){

@@ -52,19 +52,33 @@ public class RobotTests {
 
     @Test
     public void test_valid_command_interpreter_MML(){
-        assertTrue(CommandInterpreter.validadeCommand("MML", terrain));;
+        assertTrue(CommandInterpreter.validateCommand("MML", terrain));;
     }
 
     @Test
     public void test_valid_command_interpreter_MMMMRMMLM(){
-        boolean valid = CommandInterpreter.validadeCommand("MMMMRMMLM", terrain);
+        boolean valid = CommandInterpreter.validateCommand("MMMMRMMLM", terrain);
         assertTrue(valid);
         assertEquals(terrain.getRobot().getCurrentPosition(), new Position(2, 5, Position.NORTH));
     }
 
     @Test
+    public void test_valid_command_interpreter_MMRMMRMM(){
+        boolean valid = CommandInterpreter.validateCommand("MMRMMRMM", terrain);
+        assertTrue(valid);
+        assertEquals(terrain.getRobot().getCurrentPosition(), new Position(2, 0, Position.SOUTH));
+    }
+
+    @Test
+    public void test_invalid_command_interpreter_AAA(){
+        boolean valid = CommandInterpreter.validateCommand("AAA", terrain);
+        assertFalse(valid);
+        assertEquals(terrain.getRobot().getCurrentPosition(), new Position(0, 0, Position.NORTH));
+    }
+
+    @Test
     public void test_invalid_outofbounderies_command_interpreter_MMMMRMMLMM(){
-        boolean valid = CommandInterpreter.validadeCommand("MMMMRMMLMM", terrain);
+        boolean valid = CommandInterpreter.validateCommand("MMMMRMMLMM", terrain);
         assertFalse(valid);
         assertEquals(terrain.getRobot().getCurrentPosition(), new Position(2, 5, Position.NORTH));
     }
