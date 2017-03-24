@@ -1,3 +1,7 @@
+plugins {
+    id 'org.springframework.boot' version '1.5.2.RELEASE'
+}
+
 group 'nasa.vinicius'
 version '1.0'
 
@@ -17,14 +21,15 @@ dependencies {
 jar {
     manifest {
         attributes 'Implementation-Title': group,
-                'Implementation-Version': version
+                'Implementation-Version': version,
+                'Main-Class': 'service.MarsService'
     }
 }
 
 uploadArchives {
     repositories {
         flatDir {
-            dirs 'bin'
+            dirs 'repos'
         }
     }
 }

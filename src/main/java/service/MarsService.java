@@ -30,7 +30,7 @@ public class MarsService {
         if(CommandInterpreter.validateCommand(command, terrain)){
             return terrain.getRobot().getCurrentPosition().toString();
         }
-        return new ResponseEntity<String>(HttpStatus.BAD_REQUEST).getBody();
+        return "400 Bad Request";
     }
 
     public static void main(String[] args) throws Exception {
