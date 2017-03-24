@@ -10,10 +10,6 @@ public class MarsRobot implements Robot {
         this.position = new Position(0, 0, Position.NORTH);
     }
 
-    public void rotate(char side) {
-        this.position.rotate(side);
-    }
-
     public Position getCurrentPosition() {
         return this.position;
     }

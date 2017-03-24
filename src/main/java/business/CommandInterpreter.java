@@ -12,10 +12,10 @@ public class CommandInterpreter {
                     valid = terrain.moveRobot();
                     break;
                 case 'L':
-                    terrain.getRobot().rotate(Position.TURN_LEFT);
+                    terrain.getRobot().turnLeft();
                     break;
                 case 'R':
-                    terrain.getRobot().rotate(Position.TURN_RIGHT);
+                    terrain.getRobot().turnRight();
                     break;
                 default:
                     valid = false;

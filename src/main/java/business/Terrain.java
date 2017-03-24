@@ -6,6 +6,5 @@ package business;
 public interface Terrain {
     void setRobot(Robot robot);
     Robot getRobot();
-
     boolean moveRobot();
 }

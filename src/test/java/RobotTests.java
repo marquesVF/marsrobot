@@ -1,5 +1,4 @@
 import business.*;
-import javafx.geometry.Pos;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -45,7 +44,7 @@ public class RobotTests {
     public void test_robot_initial_valid_moves(){
         assertTrue(terrain.moveRobot());
         assertTrue(terrain.moveRobot());
-        robot.rotate(Position.TURN_LEFT);
+        robot.turnLeft();
         Position final_position = new Position(0, 2, Position.WEST); // (0, 2, W)
         assertEquals(robot.getCurrentPosition(), final_position);
     }
